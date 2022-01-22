@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+<meta charset="UTF-8">
+<title>ユーザー情報管理システム</title>
+</head>
+<body>
+	<header th:replace="header::header"></header>
+	<div>
+		<h1>
+		ようこそ！<br>
+		ユーザー情報管理システムへ！！
+		</h1>
+		<a th:href="@{/search}">検索</a><br>
+		<a th:href="@{/addition}">新規登録</a><br>
+		<a th:href="@{/userlist}">ユーザー一覧表示(削除)</a><br>
+
+	</div>
+</body>
+</html>

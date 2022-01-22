@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+<title>ユーザー情報追加</title>
+<meta charset="utf-8" />
+</head>
+<body>
+	<header th:replace="header::header"></header>
+    <h1>ユーザー情報追加</h1>
+<!--     submit押した後にactionが動く -->
+    <form th:action="@{/after_add}" th:object="${userAddRequest}"
+        th:method="post">
+   		 <div>
+             ID：<input type="text" name="id" size="40" />
+         </div>
+         <div>
+          名前：<input type="text" name="name" size="40" />
+         </div>
+        <br />
+        <div>
+            <input type="submit" value="追加" style="width: 100px;" />
+        </div>
+        <br />
+    </form>
+    
+ 
+</body>
+</html>

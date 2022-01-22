@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<title>ユーザー情報検索</title>
+  <head>
+<link href="/css/list.css" rel="stylesheet"></link>
+<meta charset="utf-8" />
+</head>
+<body>
+	<header th:replace="header::header"></header>
+    <h1>ユーザー情報一覧</h1>
+
+  <table>
+    <tr th:each="users : ${userlist}">
+      <td th:text="${users.id}"></td>
+      <td th:text="${users.name}"></td>
+      <td>
+        <a th:method="GET" th:href="@{/delete/{id}(id=${users.id})}"><button>削除</button></a>
+       </td>
+    </tr>
+  </table>
+</body>
+</html>
