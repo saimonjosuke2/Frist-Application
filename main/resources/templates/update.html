@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+<title>ユーザー情報編集</title>
+<link href="/css/list.css" rel="stylesheet"></link>
+<meta charset="utf-8" />
+</head>
+<body>
+	<header th:replace="header::header"></header>
+    <h1>ユーザー情報編集</h1>
+    <form th:action="@{/update}" th:object="${userUpdateRequest}"
+        th:method="post">
+   		 <div>
+                <th class="cell_title">名前</th>
+                <td th:text="*{name}"></td>
+
+         </div>
+         
+        <br />
+   		 <div>
+            名前：<input type="text" name="name" size="40" th:field="*{name}" />
+         </div>
+         
+        <br />
+        <div>
+            <input type="submit" value="編集" style="width: 100px;" />
+        </div>
+        <br />
+
+    </form>
+    
+ <div th:if="${userinfo}">
+        <table th:object="${userinfo}">
+            <tr>
+                <th class="cell_title">名前</th>
+                <td th:text="*{name}"></td>
+                <td> <a th:href="@{/}">編集</a></td>
+            </tr>
+            <tr>
+                <th class="cell_title">ID</th>
+                <td th:text="*{id}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

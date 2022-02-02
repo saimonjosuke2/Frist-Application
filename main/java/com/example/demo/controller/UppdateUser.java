@@ -25,7 +25,7 @@ public class UppdateUser {
 	  
 	  
 	  //編集画面中処理
-	  @RequestMapping(value ="/edit/{id}", method = RequestMethod.POST)
+	  @RequestMapping(value ="/edit/{id}", method = RequestMethod.GET)
 	  public String search(@ModelAttribute UserUpdateRequest userUpdateRequest, Model model, BindingResult bindingResult) {
 		  	if(bindingResult.hasErrors()) {
 		  		return "index";
