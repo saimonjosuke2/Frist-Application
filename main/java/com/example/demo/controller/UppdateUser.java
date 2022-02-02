@@ -42,7 +42,7 @@ public class UppdateUser {
 	   * @param model Model
 	   * @return ユーザー情報詳細画面
 	   */
-	  @RequestMapping(value = "/update", method = RequestMethod.POST)
+	  @RequestMapping(value = "/after_update", method = RequestMethod.POST)
 	  	public String update(@Validated @ModelAttribute UserUpdateRequest userUpdateRequest, BindingResult result, Model model) {
 		
 	    if (result.hasErrors()) {
@@ -56,7 +56,8 @@ public class UppdateUser {
 	    
 	    // ユーザー情報の更新
 	    updateService.update(userUpdateRequest);
-	    return  "userlist";
+	    return "after_update";
+
 	  }
 	  
 
